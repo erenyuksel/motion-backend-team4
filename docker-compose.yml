@@ -2,7 +2,25 @@ version: "3"
 
 services:
   backend:
-    image:
+    image: motion-image
     ports:
       - "8000:8000"
-    command: "bash"
+    command: 'tail -f /dev/null'
+    volumes:
+      - ./backend:/backend
+    env_file:
+      - ./envs/dev.env
+
+  database:
+    image: postgres:latest
+    ports:
+      - "5555:5432"
+    env_file:
+      - ./envs/dev.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+
+
