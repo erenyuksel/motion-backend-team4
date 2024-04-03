@@ -5,7 +5,7 @@ services:
     image: registry.gitlab.propulsion-home.ch/full-stack/batch-27-feb-2024/motion-backend-assigment/team-4/motion:master
     ports:
       - "8000:8000"
-    command: 'tail -f /dev/null'
+    command: 'sh /scripts/prod.sh'
 
     env_file:
       - ./envs/dev.env

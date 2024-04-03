@@ -6,6 +6,7 @@ services:
     ports:
       - "8000:8000"
     command: 'tail -f /dev/null'
+    #command: 'sh /scripts/dev.sh'
     volumes:
       - ./backend:/backend
     env_file:
