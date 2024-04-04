@@ -11,10 +11,12 @@ services:
       - ./envs/prod.env
     depends_on:
       - database
+    volumes:
+      - static_files:/static-files
+      - media_files:/media-files
 
   database:
     image: postgres:16
-
     env_file:
       - ./envs/prod.env
     volumes:
@@ -25,8 +27,12 @@ services:
     ports:
       - '80:80'
       - '443:443'
+    volumes:
+      - static_files:/static-files
+      - media_files:/media-files
 
 volumes:
   postgres_data:
-
+  static_files:
+  media_files:
 

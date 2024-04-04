@@ -3,3 +3,5 @@
 __pycache__
 .idea
 *backup.json
+static-files
+media-files
