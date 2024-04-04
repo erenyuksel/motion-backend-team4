@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  backend:
+    image: registry.gitlab.propulsion-home.ch/full-stack/batch-27-feb-2024/motion-backend-assigment/team-4/motion:master
+    ports:
+      - "8000:8000"
+    command: 'sh /scripts/prod.sh'
+
+    env_file:
+      - ./envs/prod.env
+    depends_on:
+      - database
+
+  database:
+    image: postgres:latest
+
+    env_file:
+      - ./envs/prod.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+
+
