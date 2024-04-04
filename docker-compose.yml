@@ -5,8 +5,8 @@ services:
     image: registry.gitlab.propulsion-home.ch/full-stack/batch-27-feb-2024/motion-backend-assigment/team-4/motion:latest
     ports:
       - "8000:8000"
-    command: 'tail -f /dev/null'
-    #command: 'sh /scripts/dev.sh'
+    #command: 'tail -f /dev/null'
+    command: 'sh /scripts/dev.sh'
     volumes:
       - ./backend:/backend
     env_file:
