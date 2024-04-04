@@ -5,13 +5,9 @@ RUN mkdir -p /scripts
 RUN mkdir -p /static-files
 RUN mkdir -p /media-files
 
-<<<<<<< HEAD
-#COPY ./scripts /scripts
-RUN chmod -x /scripts # give rights for execution for the scripts folder
-=======
+
 COPY ./scripts /scripts
 RUN chmod -x /scripts
->>>>>>> 5e6da8969f7c1dafea0e6bd0ccc1adaf1f6272ac
 
 COPY ./backend/requirements.yml /backend/requirements.yml
 

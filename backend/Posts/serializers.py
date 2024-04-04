@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from .models import Post, Comment, Image
 
 
@@ -24,7 +25,8 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ['id', 'description', 'created', 'updated', 'author', 'shared_posts', 'liked_by', 'images', 'comments', 'shares_count', 'likes_count']
+        fields = ['id', 'description', 'created', 'updated', 'author', 'shared_posts', 'liked_by', 'images', 'comments',
+                  'shares_count', 'likes_count']
         read_only_fields = ['author', 'created', 'updated']
 
     def get_comments(self, obj):
