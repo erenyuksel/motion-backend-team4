@@ -26,7 +26,7 @@ class RegistrationEmailSender(CreateAPIView):
             send_mail(
                 'Motion registration code',
                 f'Here is your code for registration: {user.registration_profile.code}',
-                'motionbackend24@gmail.com',
+                'team.4.motion.project@gmail.com',
                 [user.email],
                 fail_silently=False,
             )

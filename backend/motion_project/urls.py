@@ -20,16 +20,18 @@ from rest_framework_simplejwt import views as jwt_views
 from django.contrib import admin
 from django.urls import path, include
 
-api_patterns = [
-
-    path('admin/', admin.site.urls),
-    path('users/', include('User.urls'))
-
-]
+# api_patterns = [
+#
+#     path("registiration/", include("Registration.urls")),
+#     path('users/', include('User.urls'))
+#
+# ]
 
 urlpatterns = [
+    path("registiration/", include("Registration.urls")),
+    path('users/', include('User.urls')),
 
-    path('backend/api/', include(api_patterns)),
+    # path('backend/api/', include(api_patterns)),
     path('admin/', admin.site.urls),
     # path('', include('backend.User.urls')),
 
