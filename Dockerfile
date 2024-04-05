@@ -5,6 +5,7 @@ RUN mkdir -p /scripts
 RUN mkdir -p /static-files
 RUN mkdir -p /media-files
 
+
 COPY ./scripts /scripts
 RUN chmod -x /scripts
 
