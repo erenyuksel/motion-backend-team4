@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
 from django.db import IntegrityError
-from django.shortcuts import get_object_or_404
+# from django.shortcuts import get_object_or_404
 from rest_framework import status, serializers
 from rest_framework.generics import (CreateAPIView, GenericAPIView, get_object_or_404)
 from rest_framework.permissions import AllowAny
@@ -71,4 +71,3 @@ class RegistrationValidationAPIView(GenericAPIView):
 
         # serializer.save()
         return Response(serializer.data)
-
