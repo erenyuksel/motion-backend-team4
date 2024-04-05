@@ -10,6 +10,7 @@ from Registration.serializers import RegistrationEmailSerializer, VerificationCo
 
 User = get_user_model()
 
+
 class RegistrationEmailSender(CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegistrationEmailSerializer
