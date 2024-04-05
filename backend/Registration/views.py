@@ -52,7 +52,6 @@ class RegistrationValidationAPIView(GenericAPIView):
         if not serializer.validated_data['code'] == registration_profile.code:
             raise serializers.ValidationError("Registration code is not correct")
 
-
         user, created = User.objects.update_or_create(
             email=serializer.validated_data['email'],
             defaults={
