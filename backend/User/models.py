@@ -1,6 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import  AbstractUser
+from django.contrib.auth.models import AbstractUser
 from motion_project import settings
+
 
 class User(AbstractUser):
     # email = models.EmailField(blank=False, max_length=100)
@@ -34,7 +35,6 @@ class User(AbstractUser):
         related_name='followers',
         blank=True
     )
-
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']

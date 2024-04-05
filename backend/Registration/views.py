@@ -7,7 +7,6 @@ from rest_framework.generics import (CreateAPIView, GenericAPIView, get_object_o
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
-import Registration
 from Registration.models import RegistrationProfile
 from Registration.serializers import RegistrationEmailSerializer, VerificationCodeSerializer
 
@@ -39,6 +38,7 @@ class RegistrationEmailSender(CreateAPIView):
 
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
 
 class RegistrationValidationAPIView(GenericAPIView):
     queryset = RegistrationProfile.objects.all()
