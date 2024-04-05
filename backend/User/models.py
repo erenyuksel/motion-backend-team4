@@ -3,6 +3,7 @@ from django.contrib.auth.models import  AbstractUser
 from motion_project import settings
 
 class User(AbstractUser):
+    # email = models.EmailField(blank=False, max_length=100)
     email = models.EmailField(unique=True, blank=False, max_length=100)
     password = models.CharField(max_length=128, blank=False)
     last_name = models.CharField(max_length=150, blank=False)
@@ -22,6 +23,10 @@ class User(AbstractUser):
 
     # friend_requests_sent = models.ManyToManyField('Friends', related_name='sender', blank=True)
     # friend_requests_received = models.ManyToManyField('Friends', related_name='receiver', blank=True)
+
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
 
     following = models.ManyToManyField(
         verbose_name='following',
